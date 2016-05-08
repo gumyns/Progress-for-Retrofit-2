@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+project.ext.sourceCompatibility = JavaVersion.VERSION_1_8
+project.ext.targetCompatibility = JavaVersion.VERSION_1_8
+
+group 'pl.gumyns'
+version '1.0.0'
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
+
+dependencies {
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+
+    testCompile 'junit:junit:4.12'
+}
+
+test {
+    filter {
+        includeTestsMatching "*Test*"
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.13'
+}
