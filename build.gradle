@@ -1,10 +1,9 @@
 plugins {
     id 'java'
-    id 'application'
 }
 
-project.ext.sourceCompatibility = JavaVersion.VERSION_1_8
-project.ext.targetCompatibility = JavaVersion.VERSION_1_8
+project.ext.sourceCompatibility = JavaVersion.VERSION_1_7
+project.ext.targetCompatibility = JavaVersion.VERSION_1_7
 
 group 'pl.gumyns'
 version '1.0.0'
@@ -24,6 +23,11 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
 
     testCompile 'junit:junit:4.12'
+    testCompile 'com.squareup.okhttp:mockwebserver:2.7.5'
+    testCompile 'com.squareup.retrofit2:retrofit:2.0.2'
+    testCompile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    testCompile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    testCompile 'io.reactivex:rxjava:1.1.5'
 }
 
 test {

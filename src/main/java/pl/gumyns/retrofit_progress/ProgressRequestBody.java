@@ -37,7 +37,7 @@ final class ProgressRequestBody extends RequestBody {
          @Override
          public void write(Buffer source, long bytesWritten) throws IOException {
             totalBytesWritten += bytesWritten;
-            progressListener.update(totalBytesWritten, contentLength, totalBytesWritten == contentLength);
+            progressListener.update(totalBytesWritten, contentLength);
             super.write(source, bytesWritten);
          }
       });
