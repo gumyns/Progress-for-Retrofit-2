@@ -2,7 +2,9 @@
 Provides simple progress listener implementation for Retrofit 2
 
 Basic Usage:
-
+```
+compile 'pl.gumyns:retrofit_progress:1.0.0'
+```
 Create pool:
 ```java
 ProgressListenerPool pool = new ProgressListenerPool();
