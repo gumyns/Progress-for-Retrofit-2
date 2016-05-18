@@ -1,7 +1,7 @@
 # Progress-for-Retrofit-2
 Provides simple progress listener implementation for Retrofit 2
 
-Basic Usage:
+Gradle:
 ```
 compile 'pl.gumyns:retrofit_progress:1.0.0'
 ```
