@@ -20,13 +20,13 @@ repositories {
 }
 
 dependencies {
-    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:retrofit:2.4.0'
 
     testCompile 'junit:junit:4.12'
     testCompile 'com.squareup.okhttp:mockwebserver:2.7.5'
-    testCompile 'com.squareup.retrofit2:retrofit:2.0.2'
+    testCompile 'com.squareup.retrofit2:retrofit:2.4.0'
     testCompile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
-    testCompile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    testCompile 'com.squareup.retrofit2:converter-gson:2.4.0'
     testCompile 'io.reactivex:rxjava:1.1.5'
 }
 

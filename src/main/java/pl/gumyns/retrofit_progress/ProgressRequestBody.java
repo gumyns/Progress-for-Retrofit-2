@@ -30,18 +30,18 @@ final class ProgressRequestBody extends RequestBody {
 
    @Override
    public void writeTo(BufferedSink sink) throws IOException {
-      final long contentLength = contentLength();
-      BufferedSink progressSink = Okio.buffer(new ForwardingSink(sink) {
-         private long totalBytesWritten = 0L;
-
-         @Override
-         public void write(Buffer source, long bytesWritten) throws IOException {
-            totalBytesWritten += bytesWritten;
-            progressListener.update(totalBytesWritten, contentLength);
-            super.write(source, bytesWritten);
-         }
-      });
+      if (progressListener == null) {
+         requestBody.writeTo(sink);
+         return;
+      }
+      ProgressOutputStream progressOutputStream = new ProgressOutputStream(progressListener, sink.outputStream(),  contentLength());
+      BufferedSink progressSink = Okio.buffer(Okio.sink(progressOutputStream));
       requestBody.writeTo(progressSink);
       progressSink.flush();
    }
+
+   @Override public long contentLength() throws IOException {
+      return requestBody.contentLength();
+   }
+
 }
